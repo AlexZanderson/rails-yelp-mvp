@@ -1,0 +1,22 @@
+<div class="container">
+<h1><%=  @restaurant.name %></h1>
+<h5>Address</h5>
+<p><%=  @restaurant.address %></p>
+<br>
+<h5>Phone Number</h5>
+<p><%=  @restaurant.phone_number %></p>
+<br>
+<h5>Category</h5>
+<p><%=  @restaurant.category %></p>
+
+<br>
+<br>
+<h5>Reviews</h5>
+<% @restaurant.reviews.each do |review| %>
+<p><%=  review.content %></p>
+<% end %>
+
+
+<%= link_to "Create Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
+<%= link_to "All restaurants", restaurants_path, class: "btn btn-secondary"%>
+</div>
